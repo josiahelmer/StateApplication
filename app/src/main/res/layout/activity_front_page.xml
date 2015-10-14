@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New CheckBox"
-        android:id="@+id/checkBox"
+        android:id="@+id/isTiredBox"
         android:layout_marginRight="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="135dp"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/nameText"
         android:layout_marginBottom="78dp"
-        android:layout_above="@+id/checkBox"
+        android:layout_above="@+id/isTiredBox"
         android:layout_toRightOf="@+id/submitButton"
         android:layout_toEndOf="@+id/submitButton" />
 
@@ -43,8 +43,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/ageText"
         android:layout_above="@+id/nameText"
-        android:layout_toLeftOf="@+id/checkBox"
-        android:layout_toStartOf="@+id/checkBox"
+        android:layout_toLeftOf="@+id/isTiredBox"
+        android:layout_toStartOf="@+id/isTiredBox"
         android:layout_marginBottom="74dp" />
 
 </RelativeLayout>

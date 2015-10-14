@@ -9,19 +9,30 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
+import ctec.stateapplication.model.AndroidSaveState;
+
 public class BackPageActivity extends Activity
 {
     private TextView userText;
     private Button backButton;
+
+    private AndroidSaveState saveState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_back_page);
 
+        saveState = (AndroidSaveState) getApplication();
+
         backButton = (Button) findViewById(R.id.backButton);
         userText = (TextView) findViewById(R.id.userText);
 
+    }
+    private void loadContent()
+    {
+        userText.setText( saveState.getUserName() + "is" + saveState.getAge() + "yearss old"
+         + " and her/his tired setting is " + saveState.getIsTired());
     }
 
     private void setupListeners()
@@ -30,7 +41,10 @@ public class BackPageActivity extends Activity
         {
             public void onClick(View clickView)
             {
+                //Close this screen and return
                 Intent returnIntent = new Intent();
+                setResult(RESULT_OK, returnIntent);
+                finish();
             }
         });
     }
